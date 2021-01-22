@@ -1,0 +1,75 @@
+.pos-fixed {
+    position: fixed;
+    bottom:0;
+    right: 0;
+    left: 0;
+}
+
+.left-btn {
+    margin: 20px;
+    button {
+        color: #DE3163;
+        border-color: transparent;
+        border-radius: 18px;
+        background: rgba(222, 49, 99, 0.1);
+        padding-inline: 20px;
+        height: 45px;
+        i {
+            margin-right: 8px;
+            padding: 0;
+        }
+    }
+    button:hover {
+        color: #ffffff;
+        background: #DE3163;
+        border-color: transparent;
+    }
+}
+
+.right-btn {
+    text-align: right;
+    margin: 20px;
+    button {
+        color: #ffffff;
+        border-color: transparent;
+        border-radius: 15px;
+        background:#000000;
+        padding-inline: 20px;
+        height: 45px;
+        i {
+            margin-left: 5px;
+            padding: 0;
+        }
+    }
+    button:hover {
+        color: #ffffff;
+        background: #1f1f1f;
+        border-color: transparent;
+    }
+}
+
+// Mobile Display 
+
+
+
+.sm-btn {
+    margin: 10px 10px;
+    //padding-top: 36px;
+    button {
+        color: #F0256F;
+        border: none;
+        border-radius: 18px;
+        background: none;
+        box-shadow: none;
+        height: 45px;
+        i {
+            margin-right: 8px;
+            padding: 0;
+        }
+    }
+    button:focus, button:active {
+        color: #F0256F;
+        background: none;
+        box-shadow: none;
+    }
+}

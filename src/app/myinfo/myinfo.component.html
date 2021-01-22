@@ -1,0 +1,425 @@
+
+<!-- Desktop Display Start-->
+<div class="container mt-4 mt-md-5 mb-5 px-0 d-none d-lg-block">
+    <div class="row d-flex flex-wrap px-3">
+        <div class="col-lg-3 menu-list">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/">MY STUFF</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" routerLink="/myinfo">MY INFO</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/profile">PROFILE</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mb-5 col-12 col-sm-10 col-md-10 col-lg-9 mx-auto px-0">
+
+            <div class="default-addr">
+
+                <p>Default delivery address</p>
+
+                <form>
+                    <div class="border-wrap">
+                        <div class="form-row">
+                            <div class="col-3 col-md-2 code-area">
+                                <select class="form-select" id="flag" data-style="flag-opt" aria-label="Default select example" [disabled]="editDefault">
+                                    <option value="usa" selected>USA</option>
+                                    <option value="ina">INA</option>
+                                    <option value="ger">GER</option>
+                                </select>
+                            </div>
+                            <div class="col-7 street-name">
+                                <input type="text" class="form-control" id="streetName" list="suggestions" placeholder="Street name" value="Vasylya Stusa Street" [disabled]="editDefault">
+                                <label for="streetName">12, Ivano-Frankivs'k, Ivano-Frankivs'ka oblast, UA 76000</label>
+    
+                                <datalist id="suggestions" width="100%">
+                                    <option value="Fed'kovycha Street, Ivano-Frankivsk, Ivano-Frankivsk Oblast, Ukraine">
+                                    <option value="Fed'ko Street, Ivano-Frankivsk, Ivano-Frankivsk Oblast, Ukraine">
+                                    <option value="Fed'frankivsk Street, Ivano-Frankivsk, Ivano-Frankivsk Oblast, Ukraine">
+                                    <option value="Los Angeles">
+                                    <option value="Chicago">
+                                </datalist>
+                            </div>
+                            <div class="col-2 col-md-3 street-number" [ngClass]="{'number-border': editNum === true}">
+                                <div *ngIf="editBtn" class="text-right">
+                                    <button class="btn btn-primary" (click)="editForm()"><i class="fas fa-pen"></i></button>
+                                </div>
+                                
+                                <input *ngIf="editNum" type="number" class="form-control" placeholder="12">
+                            </div>
+                        </div>
+                        <div *ngIf="editNum" class="manual-postal">
+                            <input type="text" class="form-control" placeholder="Zip/Postal code">
+                        </div>
+                    </div>
+                    
+
+                    <div *ngIf="editNum" class="default-btn mt-3 d-flex gap-2 justify-content-end">
+                        <button class="btn btn-primary cancel-btn" (click)="cancelBtn()">Cancel</button>
+                        <button class="btn btn-primary save-btn">Save</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="other-addr">
+
+                <p>Other addresses</p>
+
+                <form>
+                    <div class="border-wrap">
+                        <div class="form-row">
+                            <div class="col-3 col-md-2 code-area">
+                                <select class="form-select" id="flag" data-style="flag-opt" aria-label="Default select example">
+                                    <option value="usa" selected>USA</option>
+                                    <option value="ina">INA</option>
+                                    <option value="ger">GER</option>
+                                </select>
+                             </div>
+                            <div class="col-7 street-name">
+                                <input type="text" class="form-control" id="streetName" list="suggestions" placeholder="Street name" value="Fedora Ernsta Street">
+                                <label for="streetName">34\12, Kyiv, UA 02000</label>
+    
+                                <datalist id="suggestions" width="100%">
+                                    <option value="Fed'kovycha Street, Ivano-Frankivsk, Ivano-Frankivsk Oblast, Ukraine">
+                                    <option value="Fed'ko Street, Ivano-Frankivsk, Ivano-Frankivsk Oblast, Ukraine">
+                                    <option value="Fed'frankivsk Street, Ivano-Frankivsk, Ivano-Frankivsk Oblast, Ukraine">
+                                    <option value="Los Angeles">
+                                    <option value="Chicago">
+                                </datalist>
+                            </div>
+                            <div class="col-2 col-md-3 street-number d-flex justify-content-end">
+                                <div class="btn-group toggle-btn">
+                                    <button class="btn dropdown" type="button" id="editOther" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="editOther">
+                                      <li><button class="dropdown-item edit-btn" type="button">Edit</button></li>
+                                      <li><button class="dropdown-item delete-btn" type="button">Delete</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                    
+                    
+                </form>
+
+            </div>
+
+            <div class="add-addr text-center">
+                <button class="btn btn-primary"><i class="fas fa-home"></i> Add new address</button>
+            </div>
+
+            <div class="default-paym">
+                <p>Default payment method</p>
+
+                <form>
+                    <div class="border-group">
+                        <div class="card-name">
+                            <div class="row">
+                                <div class="col-10 title">
+                                    <label class="mb-0" for="expired">My card</label>
+                                </div>
+                                <div class="col-2 title-opt d-flex justify-content-end">
+                                    <div class="btn-group toggle-btn">
+                                        <button class="btn dropdown dot-btn" type="button" id="editOther" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="editOther">
+                                          <li><button class="dropdown-item edit-btn" type="button" data-bs-toggle="modal" data-bs-target="#editCardModal">Edit</button></li>
+                                          <li><button class="dropdown-item delete-btn" type="button" data-bs-toggle="modal" data-bs-target="#deleteCardModal">Delete</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-number">
+                            <div class="row d-flex flex-row flex-wrap">
+                                <div class="col-7 col-md-9 col-lg-9 d-flex flex-row">
+                                    <div class="">
+                                        <img src="assets/Mastercard.png" height="25px"/>
+                                    </div>
+                                    <div class="ml-3">
+                                        <input type="password" class="form-control" value="123" id="inputNumber" disabled>
+                                    </div>
+                                    <div class="assigned">
+                                        <label for="inputNumber">4567</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-5 col-md-3 col-lg-3 d-flex flex-row">
+                                    <div class="text-center mx-3">
+                                        <label for="expired">07/21</label>
+                                    </div>
+                                    <div class="cvv">
+                                        <input type="password" class="form-control text-center" value="123" id="cvvNumber" disabled>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+
+            <div class="add-paym text-center">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCardModal"><i class="fas fa-credit-card"></i> Add new card</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!-- Desktop Display End-->
+
+<!-- Modal -->
+<div class="px-4 px-md-0 modal fade" id="editCardModal" tabindex="-1" aria-labelledby="edtCardModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        
+        <div class="modal-body">
+            <div class="header-btn text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="text-center">
+                <h5 class="mb-4">Edit Card</h5>
+            </div>
+            
+            <form>
+                <div class="modalInputs">
+                    <div class="top-input">
+                        <input type="text" class="form-control" placeholder="0000  0000  0000  0000" value="5189  3468  0022  4567">
+                    </div>
+                    <div class="input-group bottom-inputs">
+                        <input type="text" class="form-control" placeholder="02/22" value="07/21">
+                        <input type="password" class="form-control numCvv" value="123">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer align-self-center">
+            <button type="button" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="px-4 px-md-0 modal fade" id="addCardModal" tabindex="-1" aria-labelledby="addCardModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        
+        <div class="modal-body">
+            <div class="header-btn text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="text-center">
+                <h5 class="mb-4">Add New Card</h5>
+            </div>
+            
+            <form>
+                <div class="modalInputs">
+                    <div class="top-input">
+                        <input type="text" class="form-control" placeholder="Card number">
+                    </div>
+                    <div class="input-group bottom-inputs">
+                        <input type="text" class="form-control" placeholder="Exp">
+                        <input type="password" class="form-control numCvv" placeholder="CVV">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer align-self-center">
+            <button type="button" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="px-4 px-md-0 modal fade" id="deleteCardModal" tabindex="-1" aria-labelledby="deleteCardModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        
+        <div class="modal-body">
+            <div class="header-btn text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="text-center">
+                <h5 class="mb-4">Card Deleting</h5>
+                <p>Are you sure you want to delete the card?</p>
+            </div>
+            <div class="input-group mx-auto">
+                <input type="password" class="form-control text-right" id="del-num" value="123" disabled>
+                <input type="text" class="form-control" value="5689" disabled>
+            </div>
+        </div>
+        <div class="modal-footer align-self-center">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="del-btn">Delete</button>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Modal -->
+
+<!-- Mobile Display Start-->
+<div class="px-3 d-block d-lg-none h-100">
+    <div class="menu-tabs">
+        <ul class="nav flex-row justify-content-around">
+            <li class="nav-item">
+              <a id="inactive" class="nav-link" aria-current="page" href="#">MY STUFF</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/myinfo">MY INFO</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="stuff-content my-4 mx-auto px-0">
+        <form>
+            <div>
+                <p>User</p>
+            </div>
+            <div class="user-form">
+                <div class="userName input-group">
+                    <input type="text" class="form-control" id="user-name" placeholder="Name">
+                    <!--<button class="btn" type="button" id="user-edit"><i class="fas fa-pen"></i></button>-->
+                    <label class="input-group-text" for="user-name"><i class="fas fa-pen"></i></label>
+                </div>
+                <div class="userPhone">
+                    <input type="text" class="form-control" id="user-phone" placeholder="Phone">
+                </div>
+            </div>
+        </form>
+
+        <div class="mt-5 slide-cards">
+            <div class="d-flex">
+                <div>
+                    <p>Cards</p>
+                </div>
+                <div class="ml-auto add-card">
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#addCardModal">+ Add card</button>
+                </div>
+            </div>
+            <!--<div class="no-card">
+                <div class="oops d-flex align-items-end">
+                    <div class="p-4">
+                        <h4>
+                            OOPS!
+                        </h4>
+                        <span>
+                            Looks like you don't have any cards...
+                        </span>
+                    </div>
+                </div>
+            </div>-->
+            <div class="slider row d-flex flex-row flex-nowrap">
+                <div class="col">
+                    <div class="d-flex flex-column user-card px-4 py-3">
+                        <div class="d-flex">
+                            <div>
+                                <img src="assets/Mastercard.png" height="21px"/>
+                            </div>
+                            <div class="ml-auto">
+                                <div class="btn-opt toggle-btn">
+                                    <button class="btn dropdown dot-btn" type="button" id="editOther" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="editOther">
+                                      <li><button class="dropdown-item edit-btn" type="button" data-bs-toggle="modal" data-bs-target="#editCardModal">Edit</button></li>
+                                      <li><button class="dropdown-item delete-btn" type="button" data-bs-toggle="modal" data-bs-target="#editCardModal" data-bs-toggle="modal" data-bs-target="#deleteCardModal">Delete</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-auto user-card-number">
+                            <div class="input-group">
+                                <input type="password" value="1234" class="form-control" disabled>
+                                <input type="password" value="1234" class="form-control" disabled>
+                                <input type="password" value="1234" class="form-control" disabled>
+                                <input type="text" value="4567" class="form-control" disabled>
+                            </div>
+                        </div>
+                        <div class="mt-auto d-flex">
+                            <div>
+                                <label>My credit card</label>
+                            </div>
+                            <div class="ml-auto">
+                                <label>10/25</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="d-flex flex-column user-card px-4 py-3">
+                        <div class="d-flex">
+                            <div>
+                                <img src="assets/Visa.png" height="16px"/>
+                            </div>
+                            <div class="ml-auto">
+                                <div class="btn-opt toggle-btn">
+                                    <button class="btn dropdown dot-btn" type="button" id="editOther" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="editOther">
+                                      <li><button class="dropdown-item edit-btn" type="button" data-bs-toggle="modal" data-bs-target="#editCardModal">Edit</button></li>
+                                      <li><button class="dropdown-item delete-btn" type="button">Delete</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-auto user-card-number">
+                            <div class="input-group">
+                                <input type="password" value="1234" class="form-control" disabled>
+                                <input type="password" value="1234" class="form-control" disabled>
+                                <input type="password" value="1234" class="form-control" disabled>
+                                <input type="text" value="9876" class="form-control" disabled>
+                            </div>
+                        </div>
+                        <div class="mt-auto d-flex">
+                            <div>
+                                <label>Primary card</label>
+                            </div>
+                            <div class="ml-auto">
+                                <label>07/22</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form class="mt-5 delivery">
+            <div>
+                <p>Delivery</p>
+            </div>
+            <div class="delivery-form">
+                <div class="country-code input-group">
+                    <input type="text" class="form-control" id="country" placeholder="Country">
+                    <input type="text" class="form-control" id="post-code" placeholder="Post code">
+                    <label class="input-group-text" for="country"><i class="fas fa-pen"></i></label>
+                </div>
+                <div class="city">
+                    <input type="text" class="form-control" id="user-phone" placeholder="City">
+                </div>
+                <div class="street">
+                    <input type="text" class="form-control" id="user-phone" placeholder="Street">
+                </div>
+                <div class="number-unit input-group">
+                    <input type="text" class="form-control" id="building-number" placeholder="Building name/Block number">
+                    <input type="text" class="form-control" id="unit" placeholder="Unit">
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<!-- Mobile Display End-->

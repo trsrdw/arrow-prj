@@ -1,0 +1,607 @@
+div {
+    font-family: 'Nunito', sans-serif;
+}
+.container {
+    max-width: 1080px;
+    width: 92%;
+}
+
+// --------------
+
+// Menu List
+
+.menu-list {
+    padding-top: 25px;
+    padding-left: 20px;
+    border: 2px solid#F0256F;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    height: 195px;
+    position: relative;
+}
+
+.menu-list:after {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-top: 2px solid#F0256F;
+    border-bottom: none;
+    border-left: none;
+    border-right: 2px solid#F0256F;
+    top: 40%;
+    margin-left: -27px;
+    content: '';
+    transform: rotate(45deg);
+    background: #ffffff;
+}
+
+.menu-list {
+    a {
+        color: #000000;
+        font-weight: 700;
+    }
+}
+
+// -----------------
+
+// Default Address
+
+.default-addr {
+    p {
+        font-weight: 700;
+    }
+
+    .default-btn {
+        button {
+            height: 44px;
+            width: 140px;
+            border-radius: 18px;
+        }
+
+        .cancel-btn {
+            background: rgba(222, 49, 99, 0.1);
+            color:#F0256F;
+            border-color: rgba(222, 49, 99, 0.005);
+        }
+
+        .save-btn {
+            background:#F0256F;
+            border-color:#F0256F;
+            color: #B21F55;
+        }
+    }
+
+    .manual-postal {
+        .form-control {
+            padding: 8px;
+            height: auto;
+        }
+        input {
+            background: none;
+            border: none;
+            box-shadow: none;
+        }
+        margin-top: -1px;
+        padding: 20px;
+        border-top: 1px solid #E0E0E0;
+    }
+}
+
+.border-wrap {
+    border: 1px solid #E0E0E0;
+    border-radius: 20px;
+}
+
+.other-addr {
+    p {
+        font-weight: 700;
+    }
+    margin-top: 40px;
+}
+
+.default-paym {
+    margin-top: 60px;
+
+    p {
+        font-weight: 700;
+    }
+
+    .border-group {
+        border: 1px solid #E0E0E0;
+        padding: 0px;
+        //background: #f6f6f6;
+        border-radius: 20px;
+
+        input {
+            background: none;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            padding-inline: 0;
+            border: none;
+        }
+        input:focus {
+            box-shadow: none;
+        }
+        
+        .form-control {
+            height: auto !important;
+        }
+        .card-name {
+            padding: 15px;
+            border-bottom: 1px solid #E0E0E0;
+
+            .row {
+                margin: 0;
+                padding: 0;
+            }
+
+            .title {
+                padding: 0 12px;
+            }
+            .title-opt {
+                text-align: right;
+                padding: 0;
+                .dot-btn {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    background: none;
+                    border: none;
+                    color:#F0256F;
+                }
+            }
+        }
+        .card-number {
+            padding-inline: 27px;
+            padding-bottom: 15px;
+            margin-top: 15px;
+
+            #inputNumber {
+                letter-spacing: 5px;
+                text-align: center;
+                width: 60px;
+            }
+
+            .assigned {
+                padding: 0;
+            }
+
+            input::placeholder {
+                color: #000000;
+            }
+
+            label {
+                margin-bottom: 0;
+            }
+
+            #cvvNumber {
+                letter-spacing: 5px;
+            }
+        }
+    }
+}
+
+.add-addr {
+    margin-top: 20px;
+    button {
+        background: none;
+        border: none;
+        color:#F0256F;
+        box-shadow: none;
+        i {
+            margin-right: 5px;
+        }
+    }
+}
+
+.add-paym {
+    margin-top: 20px;
+    button {
+        background: none;
+        border: none;
+        color:#F0256F;
+        box-shadow: none;
+        i {
+            margin-right: 5px;
+        }
+    }
+}
+
+.form-row {
+    //border: 1px solid #E0E0E0;
+    padding: 15px;
+    margin-inline: 0;
+    border-radius: 20px;
+
+    .code-area {
+        padding-inline: 0;
+    }
+
+    .street-name {
+        padding-inline: 0;
+        label {
+            font-size: 13px;
+            padding-inline:12px;
+            color: #bdbdbd;
+        }
+    }
+
+    .street-number {
+        padding-inline: 0;
+
+        .custom-check {
+            label {
+                background: none;
+                color:#F0256F;
+                border: none;
+            }
+        }
+        
+        input {
+            padding-left: 30px !important;
+        }
+
+        button {
+            background: none;
+            color:#F0256F;
+            border: none;
+        }
+    }
+
+    .number-border {
+        border-left: 1px solid #E0E0E0;
+    }
+
+    input, select {
+        border: none;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .flag-opt {
+        background: blue;
+    }
+
+    .form-control {
+        height: auto !important;
+    }
+
+    input:focus, select:focus {
+        box-shadow: none;
+    }
+}
+
+.form-control:disabled {
+    background: transparent;
+}
+
+.form-select:disabled {
+    background-color: transparent;
+}
+
+.toggle-btn {
+    button {
+        box-shadow: none;
+    }
+
+    .dropdown-menu {
+        padding: 0;
+        border: transparent;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        button {
+            height: 54px;
+        }
+        button:hover {
+            background:#F0256F;
+            color:#ffffff;
+        }
+
+        .edit-btn {
+            border-bottom: 1px solid #E0E0E0;
+        }
+        .edit-btn:hover {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .delete-btn:hover {
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+    }
+}
+
+.container-modal {
+    padding-inline: 40px;
+}
+
+.modal-content {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border: transparent;
+    border-radius: 20px;
+
+    .modal-body {
+        h5 {
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        padding-inline: 50px;
+        .header-btn {
+            padding: 0;
+            button {
+                margin-top: 5px;
+                margin-right: -30px;
+                box-shadow: none;
+            }
+        }
+        .modalInputs {
+            border: 1px solid #E0E0E0;
+            border-radius: 20px;
+            .top-input {
+                padding: 15px;
+                border-bottom: 1px solid #E0E0E0;
+            }
+            .bottom-inputs {
+                padding: 15px;
+                input.numCvv {
+                    padding-left: 15px;
+                    border: none;
+                    border-left: 1px solid #E0E0E0;
+                }
+            }
+            input.form-control {
+                padding:0;
+                height: auto;
+                box-shadow: none;
+                border: none;
+            }
+        }
+    }
+
+    .modal-footer {
+        border: none;
+        padding-bottom: 30px;
+        button {
+            height: 54px;
+            border-radius: 18px;
+            background: #F0256F;
+            border-color:#F0256F;
+            color: #ffffff;
+            padding-inline: 60px;
+        }
+        #del-btn {
+            background: #FFE8F0;
+            border-color: #FFE8F0;
+            color:#F0256F;
+        }
+    }
+}
+
+#deleteCardModal {
+    input {
+        border: none;
+        background: none;
+        color: #bdbdbd;
+    }
+    #del-num {
+        letter-spacing: 3px;
+    }
+    .form-control {
+        padding: 3px;
+    }
+}
+
+
+/* Mobile Style */
+
+.menu-tabs {
+    border-bottom: 2px solid #F9A8C5;
+    padding-bottom: 5px;
+    a {
+        color: #000000;
+        font-weight: 700;
+    }
+    a#inactive {
+        font-weight: 600;
+    }
+    a:hover, a:focus, a:active {
+        color:#F0256F;
+    }
+    position: relative;
+}
+
+.menu-tabs:after {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-top: 2px solid #F9A8C5;
+    border-left: 2px solid #F9A8C5;
+    top:80%;
+    left: 75%;
+    margin-top: 3px;
+    content: '';
+    transform: rotate(45deg);
+    background: #ffffff;;
+}
+
+.stuff-content {
+    p {
+        font-weight: 700;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+    
+}
+
+.user-form {
+    input {
+        border: none;
+        box-shadow: none;
+    }
+    label {
+        color: #F0256F;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+    button {
+        color: #F0256F;
+        box-shadow: none;
+    }
+    .userName {
+        padding: 10px;
+        border: 1px solid #E0E0E0;
+        border-bottom: none;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    .userName:focus-within {
+        border: 1px solid #000000;
+        margin-bottom: -1px;
+    }
+    .userPhone {
+        padding: 10px;
+        border: 1px solid #E0E0E0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .userPhone:focus-within {
+        border-color: #000000;
+    }
+}
+
+.slide-cards {
+    .add-card {  
+        button {
+            color: #F0256F;
+            padding: 0;
+            box-shadow: none;
+        }
+    }
+
+    .no-card {
+        .oops {
+            //height: 182px;
+            //width: 320px;
+            height: 254px;
+            border-radius: 20px;
+            background: url(../../assets/no-card.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #828282;
+        }
+    }
+
+    .slider {
+        overflow-x: scroll;
+        .col {
+            padding-right:0px;
+            &:last-child {
+                padding-right:15px;
+            }
+        }
+
+        .btn-opt {
+            margin-top: -6px;
+            margin-right: -12px;
+        }
+
+        button {
+            color: #F0256F;
+        }
+    }
+
+    .user-card {
+        height: 182px;
+        width: 296px;
+        border-radius: 20px;
+        background: url(../../assets/card-body.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        .user-card-number {
+            .form-control{
+                padding: 0;
+                box-shadow: none;
+                height: auto;
+            }
+            input {
+                text-align: center;
+                letter-spacing: 3px;
+                border: none;
+                background: none;
+            }
+            
+        }
+    }
+}
+
+.delivery-form {
+    .form-control {
+        padding: 0;
+        height: auto;
+    }
+    input {
+        border: none;
+        box-shadow: none;
+    }
+    label {
+        color: #F0256F;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .country-code {
+        padding: 15px 22px;
+        border: 1px solid #E0E0E0;
+        border-bottom: none;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    .country-code:focus-within {
+        border: 1px solid #000000;
+        margin-bottom: -1px;
+    }
+
+    .city {
+        padding: 15px 22px;
+        border: 1px solid #E0E0E0;
+    }
+    .city:focus-within {
+        border: 1px solid #000000;
+    }
+
+    .street {
+        padding: 15px 22px;
+        border: 1px solid #E0E0E0;
+        border-top: none;
+    }
+    .street:focus-within {
+        border: 1px solid #000000;
+        margin-top: -1px;
+    }
+    
+    .number-unit {
+        padding: 15px 22px;
+        border: 1px solid #E0E0E0;
+        border-top: none;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .number-unit:focus-within {
+        border: 1px solid #000000;
+        margin-top: -1px;
+    }
+    #building-number {
+        width: 250px;
+    }
+    #unit, #post-code {
+        border-left: 1px solid #E0E0E0;
+        padding-left: 15px;
+    }
+}

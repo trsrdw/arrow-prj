@@ -1,0 +1,181 @@
+div {
+    font-family: 'Nunito', sans-serif;
+}
+.container {
+    max-width: 1080px;
+    width: 92%;
+}
+
+// --------------
+
+// Menu List
+
+.menu-list {
+    padding-top: 25px;
+    padding-left: 20px;
+    border: 2px solid #DE3163;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    height: 195px;
+    position: relative;
+}
+
+.menu-list:after {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-top: 2px solid #DE3163;
+    border-bottom: none;
+    border-left: none;
+    border-right: 2px solid #DE3163;
+    top: 60%;
+    margin-left: -27px;
+    content: '';
+    transform: rotate(45deg);
+    background: #ffffff;
+}
+
+
+.menu-list {
+    a {
+        color: #000000;
+        font-weight: 700;
+    }
+}
+
+// -----------------
+
+// profile info 
+
+.profile-info {
+    p {
+        font-weight: 700;
+    }
+}
+
+.user-form {
+    input {
+        border: none;
+        box-shadow: none;
+    }
+    .userName {
+        padding: 10px;
+        border: 1px solid #E0E0E0;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    .userName:focus-within {
+        border: 1px solid #000000;
+    }
+    .userBirth {
+        padding: 10px;
+        border: 1px solid #E0E0E0;
+        border-top: none;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .userBirth:focus-within {
+        border: 1px solid #000000;
+        margin-top: -1px;
+    }
+}
+
+// Default contact info
+
+.default-info {
+    margin-top: 40px;
+    p {
+        font-weight: 700;
+    }
+
+    .add-group {
+        input {
+            border: none;
+        }
+        input:focus {
+            box-shadow: none;
+        }
+        
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active  {
+            box-shadow: 0 0 0 30px white inset !important;
+        }
+
+        .addEmail {
+            border: 1px solid #E0E0E0;
+            border-radius: 20px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .addEmail:focus-within {
+            border-color: #000000;
+        }
+    
+        .addPhone {
+            border: 1px solid #E0E0E0;
+            border-radius: 20px;
+            padding: 10px;
+        }
+        .addPhone:focus-within {
+            border-color: #000000;
+        }
+    }
+
+    
+
+    .group-btn {
+        button {
+            height: 60px;
+            background: #f6f6f6;
+            border: 1px solid #f6f6f6;
+            border-radius: 20px;
+            color: #828282;
+            i {
+                font-size: 10px;
+                border: 1px solid #828282;
+                border-radius: 50%;
+                padding: 5px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .email-btn {
+        margin-bottom: 20px;
+    }
+}
+
+/* Mobile Style */
+
+.menu-tabs {
+    border-bottom: 2px solid #F9A8C5;
+    padding-bottom: 5px;
+    a {
+        color: #000000;
+        font-weight: 700;
+    }
+    a#inactive {
+        font-weight: 600;
+    }
+    a:hover, a:focus, a:active {
+        color: #DE3163;
+    }
+    position: relative;
+}
+
+.menu-tabs:after {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-top: 2px solid #F9A8C5;
+    border-left: 2px solid #F9A8C5;
+    top:80%;
+    left: 82%;
+    margin-top: 3px;
+    content: '';
+    transform: rotate(45deg);
+    background: #ffffff;;
+}
